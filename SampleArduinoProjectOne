@@ -1,1 +1,173 @@
-//This is the 1st sample Arduino Code Project
+// H....O_ _ _T_
+// I..C_._.Y_._ _
+/*current progress 4/8/2022-hot temp LED works; 
+moderate temp LED works; icy temp works - completed*/
+
+//Arduino Sample Project Modification 2 LED Blinks as a Morse Code for each letter through a temperature sensor
+
+
+int ledPin = 4;
+int ledPinTwo = 3;
+int ledPinThree = 2;
+
+
+
+int durationshotH[]= {200, 200, 200, 200};
+int durationshotO[]= {500, 500, 500};
+int durationshotT[]= {500};
+int durationcoldI[]= {200, 200};
+int durationcoldC[]= {500, 200, 500, 200};
+int durationcoldY[]= {500, 200, 500, 500};
+
+
+int baselineTemp = 0;
+
+int celsius = 0;
+
+int fahrenheit = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(ledPinTwo, OUTPUT);
+  pinMode(ledPinThree,OUTPUT);
+  
+}
+
+void loop()
+{
+  baselineTemp = 40;
+  celsius = map(((analogRead(A0) - 20) * 3.04), 0, 1023, -40, 125);
+  fahrenheit = ((celsius * 9) / 5 + 32);
+  Serial.print(celsius);
+  Serial.print(" C, ");
+  Serial.print(fahrenheit);
+  Serial.println(" F");
+  if (celsius < baselineTemp) {
+    for (int i=0; i<2; i++)
+    {
+  
+    flash(durationcoldI[i]);
+   
+  }
+    for (int i=0; i<4;i++)
+    {
+      
+    flashTwo(durationcoldC[i]);
+
+  }
+    for (int i=0; i<4;i++)
+    {
+  
+   flashThree(durationcoldY[i]);
+
+  }        
+
+  }
+  if (celsius >= baselineTemp && celsius < baselineTemp + 10) {
+    for (int i=0; i<2; i++)
+    {
+  
+    flash(durationcoldI[i]);
+   
+  }
+    for (int i=0; i<4;i++)
+    {
+      
+    flashTwo(durationcoldC[i]);
+
+  }
+    for (int i=0; i<4;i++)
+    {
+  
+   flashThree(durationcoldY[i]);
+
+  } 
+
+  }
+  if (celsius >= baselineTemp + 10 && celsius < baselineTemp + 20) {
+   digitalWrite (ledPin, HIGH);
+   digitalWrite (ledPinTwo, HIGH);
+   digitalWrite (ledPinThree, HIGH);
+   
+
+  }
+  if (celsius >= baselineTemp + 20 && celsius < baselineTemp + 30) {
+    for (int i=0; i<4; i++)
+    {
+  for (int i=0; i<4; i++)
+    {
+  
+    flash(durationshotH [i]);
+   
+  }
+    for (int i=0; i<3;i++)
+    {
+      
+    flashTwo(durationshotO[i]);
+
+  }
+    for (int i=0; i<1;i++)
+    {
+  
+    flashThree(durationshotT [i]);
+
+  }           
+      
+       
+  }
+    
+    
+  }
+  if (celsius >= baselineTemp + 30) {
+    for (int i=0; i<4; i++)
+    {
+  
+    flash(durationshotH [i]);
+   
+  }
+    for (int i=0; i<3;i++)
+    {
+      
+    flashTwo(durationshotO[i]);
+
+  }
+    for (int i=0; i<1;i++)
+    {
+  
+    flashThree(durationshotT [i]);
+
+  }        
+        
+    
+  }
+  delay(1000); 
+}
+
+
+void flash (int delayPeriod)
+{
+digitalWrite (ledPin, HIGH);
+delay (delayPeriod);
+digitalWrite(ledPin, LOW);
+delay (delayPeriod);
+}
+
+void flashTwo (int delayPeriod)
+{
+digitalWrite (ledPinTwo, HIGH);
+delay (delayPeriod);
+digitalWrite(ledPinTwo, LOW);
+delay (delayPeriod);
+}
+
+void flashThree (int delayPeriod)
+{
+digitalWrite (ledPinThree, HIGH);
+delay (delayPeriod);
+digitalWrite(ledPinThree, LOW);
+delay (delayPeriod);
+}
+
