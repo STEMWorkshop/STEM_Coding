@@ -1,3 +1,8 @@
+ /*current progress 4/18/2022-bouncing full & half works; 
+- completed*/
+
+//Arduino Sample Project Modification 1 LED Blinks Bouncing Full & Half-Way
+ 
  int ledPinB[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
 void setup() {
