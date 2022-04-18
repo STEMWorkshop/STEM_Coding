@@ -1,0 +1,62 @@
+ int ledPinB[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+
+void setup() {
+  for (int i=0; i<10; i++)
+ { 
+   pinMode(ledPinB[i], OUTPUT);
+  }
+  
+}
+
+void loop() 
+{ 
+ 
+for (int i=0; i<10; i++) 
+{    
+digitalWrite(ledPinB[i], HIGH);
+delay (100);
+
+}
+  
+for (int i=10; i>=0; i--) 
+{    
+digitalWrite(ledPinB[i], LOW);
+delay (100);
+
+}
+  
+for (int i=5; i<10; i++) 
+{    
+digitalWrite(ledPinB[i], HIGH);
+delay (100);
+
+}
+
+for (int i=0; i>6; i++) 
+{    
+digitalWrite(ledPinB[i], LOW);
+delay (100);
+
+}
+  
+  
+}           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
