@@ -1,0 +1,30 @@
+
+//sample project 4 completed on April 28, 2022 @ Bacolod City, Negros Occidental, Philippines
+
+int speak = 8;
+int pause = 500;
+
+void setup() {
+
+pinMode(speak, OUTPUT);
+
+ for (int i = 100; i <=240; i+=20) 
+  {
+  tone(speak, i);
+  delay(pause);
+  }
+  
+  for (int i = 240; i >= 100; i-=20) 
+  {
+  tone(speak, i);
+  delay(pause);
+  }
+
+  noTone(8);
+   
+}
+
+void loop() {
+   
+}
+
