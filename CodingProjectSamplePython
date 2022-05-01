@@ -1,0 +1,206 @@
+def effects():
+	print ('Choose an event to know its effects to our society.')
+	print ('Choice 1: Deforestation')
+	print ('Choice 2: Smoke from Vehicles')
+	print ('Choice 3: Plastic garbages thrown anywhere')
+	print ('Choice 4: To go back to the ongoing events')
+
+	b=input('Enter a number:')
+
+	if b== "1":
+		print ('This can cause floods and soil erosion.\n\n')
+		effects()
+	elif b== "2":
+		print ('This can pollute the air which can affect our health. It will be harder to breath.\n\n')
+		effects()
+	elif b== "3":
+		print ('These garbages can harm the living organisms both in the water and the land. Plastics are non-biodegradable.\n\n')
+		effects()
+	elif b== "4":
+		story_begin()
+	else:
+	    print ('Press 1 to 4 only. Please try again.\n\n')
+	    effects()
+   
+
+
+def cause():
+	print ('Choose an event to know its causes.')
+	print ('Choice 1: Global Warming')
+	print ('Choice 2: Dirty Water')
+	print ('Choice 3: Animal Extinction')
+	print ('Choice 4: To go back to the ongoing events')
+
+	c=input('Enter a number:')
+
+	if c== "1":
+		print ('This is caused by illegal cutting of trees. Trees provide oxygen and absorb carbon dioxide.\n\n')
+		cause()
+	elif c== "2":
+		print ('This is caused by throwing of dirty garbages inclduing harmful chemicals into the water.\n\n')
+		cause()
+	elif c== "3":
+		print ('This is caused by illegal hunting and smuggling of rare animal species.\n\n')
+		cause()
+	elif c== "4":
+		story_begin()
+	else:
+	    print ('Press 1 to 4 only. Please try again.\n\n')
+	    cause()
+   
+
+
+
+def solution():
+	print ('\n\nChoose a particular issue to know its preferred solution.')
+	print ('Choice 1: Flooding')
+	print ('Choice 2: Drought')
+	print ('Choice 3: Diseases')
+	print ('Choice 4: To go back to the ongoing events')
+
+	w=input('Enter a number:')
+
+	if w== "1":
+		print ('Please plant trees and stop illegal logging.\n\n')
+		solution()
+	elif w== "2":
+		print ('Please conserve and stop polluting water.\n\n')
+		solution()
+	elif w== "3":
+		print ('Keep the surroundings clean and manage waste properly.\n\n')
+		solution()
+	elif w== "4":
+		story_begin()
+	else:
+	    print ('Press 1 to 4 only. Please try again.\n\n')
+	    solution()
+
+
+  
+
+
+def quiz_ready():
+	print ('You can check your environmental knowledge by taking this short quiz. If ready, please press one otherwise press anything.\n')
+
+	q=input('Enter a number: ')
+
+	if q == "1":
+	   quiz_start()
+	else:
+	   print ("You may take the quiz next time when ready.\n\n")
+	   story_begin()
+
+
+
+
+
+def quiz_starta():
+	print ('Question 1: What is one of the best ways to solve the environmental pollution?\n\n')
+	print ("Choice 1: Use a recyable or biogradable material.")
+	print ('Choice 2: Throw the plastics to the water or just anywhere.')
+	print ('Choice 3: Smoke a cigar with many people around.')
+
+	m=input('Enter a number: ')
+
+	if m=="1":
+		print('Your answer is correct. Very Good!')
+	elif m == "2":
+		print ('The best answer is Choice 1.')
+	elif m== "3":
+		print ('The best answer is Choice 1.')
+	else:
+	    print ('Press 1 to 3 only. Try again!')
+	    quiz_starta()
+
+
+
+def quiz_startb():
+	print ('This is quiz_startb method.')
+
+    # to continue from here
+
+
+def quiz_startc():
+	print ('This is quiz_startc method.')
+
+
+
+
+
+
+def quiz_start ():
+     quiz_starta()
+
+     quiz_startb()
+
+     quiz_startc()
+
+     print("Thanks for taking the short quiz.")
+     story_begin()
+
+def conversion():
+	print ('This is quiz conversion method.')
+
+
+
+
+
+
+
+
+def main():
+   
+   print ('\n\nWelcome to the Choose Your Own Coding Environmental Adventure Story!\n\n')
+   print ('You have to decide which adventure to take.')
+   print ('Are you ready for an exciting adventure? If yes, press 1 and if not, just press something else to leave this program.')
+    
+   a=input ('Enter a number: ')
+
+   if a == "1":
+       story_begin()   
+   else:
+       print('Thanks for using the program.')
+
+   
+
+
+def story_begin():
+
+	print ('\n\nLet us begin inside your house. You are about to travel and explore the nature beauty.')
+	print ('Before the journey, you want to know what is going on first with the environment as you heard from the news.')
+	print ('To know about the situation, please choose among the choices.')
+	print ('Choice 1: Know the effects of the ongoing events')
+	print ('Choice 2: Know the causes of ongoing events.')
+	print ('Choice 3: Know the preferred solutions.')
+	print ('Choice 4: Take a check-up quiz.')
+	print ('Choice 5: Have some mathematical conversions related to the environment.')
+	print ('Choice 6: Leave this program.')
+
+	z=input ('Enter a number: ')
+
+	if z == "1":
+		effects()
+	elif z == "2":
+		cause()
+	elif z == "3":
+	 	solution()
+	elif z == "4":
+		quiz_ready()
+	elif z == "5":
+		conversion()
+	elif z == "6":
+		print ('Hope you have an exciting adventure. You can come back anytime.')
+	else:
+	    print ('Press 1 to 6 only. Try again.')
+	    story_begin()
+		
+
+	
+ 
+
+
+
+
+
+
+main()
