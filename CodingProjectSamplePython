@@ -95,7 +95,7 @@ def quiz_ready():
 
 
 def quiz_starta():
-	print ('Question 1: What is one of the best ways to solve the environmental pollution?\n\n')
+	print ('\n\nQuestion 1: What is one of the best ways to solve the environmental pollution?\n')
 	print ("Choice 1: Use a recyable or biogradable material.")
 	print ('Choice 2: Throw the plastics to the water or just anywhere.')
 	print ('Choice 3: Smoke a cigar with many people around.')
@@ -103,27 +103,55 @@ def quiz_starta():
 	m=input('Enter a number: ')
 
 	if m=="1":
-		print('Your answer is correct. Very Good!')
+		print('\nYour answer is correct. Very Good!')
 	elif m == "2":
-		print ('The best answer is Choice 1.')
+		print ('\nThe best answer is Choice 1.')
 	elif m== "3":
-		print ('The best answer is Choice 1.')
+		print ('\nThe best answer is Choice 1.')
 	else:
-	    print ('Press 1 to 3 only. Try again!')
+	    print ('\nPress 1 to 3 only. Try again!')
 	    quiz_starta()
 
 
 
 def quiz_startb():
-	print ('This is quiz_startb method.')
+	print ('\n\nQuestion 2: What should be done if many trees are cut-down?\n')
+	print ('Choice 1: Just let it be.')
+	print ('Choice 2: Plant new trees again.')
+	print ('Choice 3: Use the logs to get more money and cut more trees without replanting it.')
 
-    # to continue from here
+	m=input('Enter a number:')
+
+	if m=="1":
+		print ('\nThe best answer is Choice 2.')
+	elif m=="2":
+		print ('\nYour answer is correct. Very Good!')
+	elif m=="3":
+		print ('\nThe best answer is Choice 2.')
+	else:
+		print ('\nPress 1 to 3 only. Try again!')
+		quiz_startb()
+
+
 
 
 def quiz_startc():
-	print ('This is quiz_startc method.')
+	print ('\n\nQuestion 3: Burning coal can pollute the air. What is the best alternative?\n')
+	print ('Choice 1: There is no alternative.')
+	print ('Choice 2: Use other minerals instead')
+	print ('Choice 3: Use new renewable energy source technologies such as the wind turbine and solar panel.')
 
+	m = input('Enter a number:')
 
+	if m=="1":
+		print ('\nThe best answer is Choice 3.')
+	elif m=="2":
+		print ('\nThe best answer is Choice 3.')
+	elif m=="3":
+	    print ('\nYour answer is correct. Very Good!')
+	else:
+		print ('\nPress 1 to 3 only. try again!')
+		quiz_startc()
 
 
 
@@ -135,11 +163,78 @@ def quiz_start ():
 
      quiz_startc()
 
-     print("Thanks for taking the short quiz.")
+     print("\nThanks for taking the short quiz.")
      story_begin()
 
+
+
 def conversion():
-	print ('This is quiz conversion method.')
+	print ('\n\nAs you travel around and explore the natural surroundings, you need help with some mathematical quantities. Here are some conversions that you may need.\n')
+	print ('Choice 1: The weather is getting hotter due to climate change. You want to change the temperature readings from fahrenheit to celsius.')
+	print ('Choice 2: The flood water level is rising quickly as there are no trees. You want to measure the water depth from inches to feet.')
+	print ("Choice 3: The storm is approaching and the wind is getting stronger. You are eager to measure its speed from miles per second to kilometers per hour.")
+	print ('Press 4 to leave this conversion.')
+
+	h=input('Enter a number:')
+
+	if h=="1":
+		conversiona()
+	elif h =="2":
+		conversionb()
+	elif h =="3":
+		conversionc()
+	elif h== "4":
+		story_begin()
+	else:
+		print ('Press 1 to 4 only. Please try again')
+	conversion ()
+
+
+
+
+def conversiona():
+	print ('Please enter the temperature reading in fahrenheit.')
+
+	try:
+		fahrenheit = float(input('Enter a numerical value:'))
+		celsius = (fahrenheit-32) * 5/9
+		print('The temperature value in Degree Celsius is %0.2f' %(celsius))
+
+	except (TypeError, ValueError):
+		print('Please type a number only. Try again!')
+		conversiona()
+   
+   
+
+def conversionb():
+	print ('Please enter the water depth in inches.')
+
+	try:
+		depthinch = float(input('Enter a numerical value:'))
+		depthfeet = depthinch/12
+		print('The water depth in feet is %0.2f' %(depthfeet))
+
+	except (TypeError, ValueError):
+		print('Please type a number only. Try again!')
+		conversionb()
+
+
+
+
+def conversionc():
+	print ('Please enter the wind speed in miles per hour.')
+
+	try:
+		windmph = float(input('Enter a numerical value:'))
+		windkmh = windmph * 1.6093440
+		print('The wind speed in kilometers per hour is %0.2f' %(windkmh))
+
+	except (TypeError, ValueError):
+		print('Please type a number only. Try again!')
+		conversionc()
+
+
+  
 
 
 
@@ -147,6 +242,11 @@ def conversion():
 
 
 
+
+
+
+
+ 
 
 def main():
    
@@ -190,6 +290,7 @@ def story_begin():
 		conversion()
 	elif z == "6":
 		print ('Hope you have an exciting adventure. You can come back anytime.')
+		exit(0)
 	else:
 	    print ('Press 1 to 6 only. Try again.')
 	    story_begin()
