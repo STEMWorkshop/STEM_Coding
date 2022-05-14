@@ -1,4 +1,4 @@
-vchar messageOne [] = "Enter the value for Length in meters.";
+char messageOne [] = "Enter the value for Length in meters.";
 char messageTwo [] = "Enter the value for Width in meters.";
 char messageThree [] = "The Area in meters squared is: ";
 
