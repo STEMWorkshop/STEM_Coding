@@ -1,0 +1,39 @@
+vchar messageOne [] = "Enter the value for Length in meters.";
+char messageTwo [] = "Enter the value for Width in meters.";
+char messageThree [] = "The Area in meters squared is: ";
+
+void setup() {
+  Serial.begin (9600);
+  Serial.println(messageOne);
+ 
+  while (Serial.available()==0){
+  }
+    
+  float a = Serial.parseFloat();
+  Serial.println(a);
+  
+  Serial.println(messageTwo);
+  
+  while (Serial.available()==0){
+  }
+  
+  float b = Serial.parseFloat();
+  Serial.println(b);
+    
+   
+  Serial.println(messageThree);
+  float c = a*b;
+  
+  Serial.println(c);
+  
+ 
+ 
+  
+}
+
+
+
+void loop() {
+  
+ 
+}
